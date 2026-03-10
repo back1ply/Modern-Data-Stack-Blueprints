@@ -7,11 +7,11 @@ A curated collection of lean, modern, and cost-effective Data/BI stack implement
 This list focuses on Modern Data Stack (MDS) architectures optimized for Small to Medium Businesses (SMBs), solo data engineers, and highly performant portfolio projects. The emphasis is on open-source, local-first, or serverless tools that provide enterprise-grade robustness without the enterprise price tag.
 
 ## 🛠️ Core MDS Technologies Featured
-* **Storage/Compute:** DuckDB, MotherDuck, BigQuery
+* **Storage/Compute:** DuckDB, MotherDuck, BigQuery, MinIO, Apache Iceberg
 * **Ingestion (EL):** dlt, Airbyte, Prefect
 * **Transformation/Semantic (T):** dbt (Core), SQLMesh, Cube
 * **Orchestration:** Dagster, Mage.ai, Prefect
-* **Visualization (BI):** Metabase, Evidence.dev, Apache Superset
+* **Visualization (BI):** Metabase, Evidence.dev, Streamlit, Apache Superset
 
 ---
 
@@ -20,7 +20,7 @@ These repositories demonstrate complete MDS lifecycles, from extracting raw data
 
 * **[PyPI Duck Flow](https://github.com/mehd-io/pypi-duck-flow)**
   * **Stack:** Prefect, DuckDB, dbt, Metabase.
-  * **Highlights:** A beautifully clean pipeline that pulls Python package download statistics from PyPI, orchestrates the ingestion with Prefect, models it locally in DuckDB, and visualizes the trends. Perfect for seeing Prefect in action within a local MDS.
+  * **Highlights:** A beautifully clean pipeline that pulls Python package download statistics from PyPI, orchestrates the ingestion with Prefect, models it locally in DuckDB, and visualizes the trends. 
 
 * **[Dagster + dlt + dbt + DuckDB SDLC](https://github.com/jairus-m/dagster-sdlc)**
   * **Stack:** Dagster, dlt, dbt-core, DuckDB, Snowflake.
@@ -81,12 +81,25 @@ For when you want to cut out the noise, write code, and serve lightweight analyt
 
 ---
 
+## 📖 Real-World Case Studies & Dev Journals
+Learn from the trenches. These articles detail the exact hurdles engineers faced when building these lean stacks.
+
+* **[My Journal: Dagster + dlt + DuckDB (by Wambui Gitau)](https://medium.com/@ywg/my-journal-dagster-dlt-duckdb-part-1-15051f20e597)**
+  * **Summary:** A brilliant, transparent 3-part series detailing the friction points of setting up this specific stack (like dealing with DuckDB's single-write locks during ingestion) and how to overcome them.
+* **[Building a Production-Grade, Serverless EV Data Pipeline (by Nitish Karekar)](https://medium.com/@nitishkarekar/first-elt-project-364dec0ca259)**
+  * **Summary:** A fantastic blueprint for using GCP Cloud Functions for defensive ingestion, GitHub Actions for orchestration, and MotherDuck/dbt for compute, served finally on Streamlit.
+
+---
+
 ## 📚 Architecture Guides & Must-Reads
 Articles, blogs, and manifestos that define the lean Modern Data Stack philosophy.
 
+* **[Lean Data Stack with dlt, DuckDB, DuckLake, and dbt (Datacoves)](https://datacoves.com/post/dbt-duckdb)**
+  * **Summary:** An excellent architectural breakdown of separating ingestion, storage, and transformation, introducing "DuckLake" to turn local Parquet files into a true lakehouse.
+* **[8 ways to flex DuckDB (Tasman Analytics)](https://tasman.ai/news/8-ways-to-flex-duckdb)**
+  * **Summary:** Explores advanced, real-world DuckDB use cases, including using it as a multi-engine stack connector and querying raw JSON/CSV files seamlessly.
 * **[Building a Local Data Lake with DuckDB (Dagster)](https://dagster.io/blog/duckdb-data-lake)**
   * **Summary:** A brilliant architectural breakdown of how to bypass expensive cloud data warehouses by using DuckDB and Parquet files to create an "Embedded Data Lake."
-
 * **[Big Data is Dead (MotherDuck)](https://motherduck.com/blog/big-data-is-dead/)**
   * **Summary:** The defining manifesto for the SMB data stack. It argues that most companies do not have "big data" and shouldn't be paying for architectures built for petabyte scale, championing the rise of DuckDB.
 
