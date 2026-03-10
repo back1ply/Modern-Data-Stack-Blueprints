@@ -7,7 +7,7 @@ A curated collection of lean, modern, and cost-effective Data/BI stack implement
 This list focuses on Modern Data Stack (MDS) architectures optimized for Small to Medium Businesses (SMBs), solo data engineers, and highly performant portfolio projects. The emphasis is on open-source, local-first, or serverless tools that provide enterprise-grade robustness without the enterprise price tag.
 
 ## 🛠️ Core MDS Technologies Featured
-* **Storage/Compute:** DuckDB, MotherDuck, BigQuery, MinIO, Apache Iceberg
+* **Storage/Compute:** DuckDB, MotherDuck, BigQuery
 * **Ingestion (EL):** dlt, Airbyte, Prefect
 * **Transformation/Semantic (T):** dbt (Core), SQLMesh, Cube
 * **Orchestration:** Dagster, Mage.ai, Prefect
@@ -43,10 +43,6 @@ These repositories demonstrate complete MDS lifecycles, from extracting raw data
 ## 💻 Local-First & "Zero Cloud" MDS Environments
 Templates designed to run a massive data operation entirely on a single machine with zero cloud compute costs.
 
-* **[Iceberg + DuckDB + MinIO](https://github.com/data-engineers-glass/iceberg-duckdb-minio)**
-  * **Stack:** Apache Iceberg, DuckDB, MinIO.
-  * **Highlights:** Takes the "DuckDB Data Lake" concept and makes it a reality. Shows how to set up an open-source data lake locally using MinIO as a free S3 replacement and Iceberg for table formats, all queried by DuckDB.
-
 * **[Orca - A Modern Data Platform](https://github.com/mathisdrn/orca)**
   * **Stack:** dbt, DuckDB (highly modular).
   * **Highlights:** A polished "reference implementation" framework for a modern open-source platform. Built to integrate easily with agentic AI workflows.
@@ -67,9 +63,6 @@ Templates designed to run a massive data operation entirely on a single machine 
 
 ## 📊 Minimal MDS & "BI-as-Code" Deployments
 For when you want to cut out the noise, write code, and serve lightweight analytics.
-
-* **[MotherDuck + dlt + dbt Pipeline](https://github.com/zuzash/motherduck-dlt-dbt)** * **Stack:** dlt, dbt, MotherDuck.
-  * **Highlights:** Focuses strictly on the ingestion and transformation layer. Shows how easily `dlt` can strip data from an API and dump it directly into MotherDuck, ready for dbt to model it without a heavy orchestration engine.
 
 * **[Nobel Prize Report (BI-as-Code)](https://github.com/tzelleke/nobel-prize-report)**
   * **Stack:** Python, dbt, DuckDB, Evidence.dev.
@@ -96,9 +89,6 @@ Articles, blogs, and manifestos that define the lean Modern Data Stack philosoph
 
 * **[Big Data is Dead (MotherDuck)](https://motherduck.com/blog/big-data-is-dead/)**
   * **Summary:** The defining manifesto for the SMB data stack. It argues that most companies do not have "big data" and shouldn't be paying for architectures built for petabyte scale, championing the rise of DuckDB.
-
-* **[The Micro Data Stack (dltHub)](https://dlthub.com/blog/micro-data-stack)**
-  * **Summary:** Explores how open-source, Python-native tools like `dlt`, `dbt`, and `DuckDB` have democratized data engineering, allowing single developers to build pipelines that previously required entire teams.
 
 ---
 
